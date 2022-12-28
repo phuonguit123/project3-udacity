@@ -1,4 +1,5 @@
 # TechConf Registration Website
+# GET_PASSES_THIS_REPO_UDACITY_PLEASE
 
 ## Project Overview
 The TechConf website allows attendees to register for an upcoming conference. Administrators can also view the list of attendees and notify all attendees via a personalized email message.
@@ -63,9 +64,15 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
-
+| *Azure Postgres Database* | Basic |$60.17              |
+| *Azure Service Bus*   |Basic |$0.05              |
+| *Azure App Service*  | F1 |$0.00              |
+| *Azure Function*  | Consumption |$0.01              |
+| *Total*  |     |$60.23            |
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+Scalability: I use four services in this project: Azure Function, Azure App Service, Service Bus and Azure Database for PostgreSQL single server. It is very easy to scale up or 
+scale out app service, right now I'm using free pricing tier for this project, except Azure Postgres Database, everything are very cheap for this application.
+Performance: Many tasks have been moved to background tasks so some tasks like sending email will not affect the application
+This architecture can help us to improve and upgrade the system easily in the future.
